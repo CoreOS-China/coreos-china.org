@@ -1,7 +1,7 @@
 coreos-china.org
 ================
 
-URL: [http://coreos-china.org]:http://coreos-china.org
+URL: http://coreos-china.org
 欢迎加入项目QQ群: 279373713 (CoreOS 中国用户组)
 
 # 开发环境
