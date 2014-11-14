@@ -1,7 +1,7 @@
 package main
 
 import "github.com/astaxie/beego"
-import "./controllers"
+import "coreos-china.org/controllers"
 
 func main() {
 	beego.HttpPort = 8080
