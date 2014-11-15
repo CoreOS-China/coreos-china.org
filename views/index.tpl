@@ -18,7 +18,7 @@
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="./src/ie-emulation-modes-warning.js"></script>
+    <script src="./static/js/ie-emulation-modes-warning.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -59,7 +59,7 @@
             <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas">Toggle nav</button>
           </p>
           <div class="jumbotron">
-            <h1><img src="../src/coreos-logo.png"></h1>
+            <h1><img src="../static/img/coreos-logo.png"></h1>
             <h2>面向大规模服务器部署的Linux发行版</h2>
             <p>使用极简的现代操作系统构建数据中心级别的计算能力</p>
           </div>
@@ -125,13 +125,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="./src/jquery.min.js"></script>
-    <script src="./src/bootstrap.min.js"></script>
+    <script src="./static/js/jquery.min.js"></script>
+    <script src="./static/js/bootstrap.min.js"></script>
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="./src/ie10-viewport-bug-workaround.js"></script>
+    <script src="./static/js/ie10-viewport-bug-workaround.js"></script>
 
-    <script src="./src/offcanvas.js"></script>
+    <script src="./static/js/offcanvas.js"></script>
   
 
 </body></html>
