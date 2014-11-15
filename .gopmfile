@@ -1,0 +1,9 @@
+[target]
+path = coreos-china.org
+
+[deps]
+github.com/astaxie/beego =
+github.com/magiconair/properties =
+
+[res]
+include = views|static|conf
