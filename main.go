@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"./controllers"
+	"coreos-china.org/controllers"
 	"github.com/astaxie/beego"
 	"github.com/magiconair/properties"
 )
