@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"coreos-china.org/controllers"
+	"coreos-china.org/lib/logger"
 	"github.com/astaxie/beego"
 	"github.com/magiconair/properties"
 )
