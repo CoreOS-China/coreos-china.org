@@ -48,5 +48,6 @@ func main() {
 	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "the second line" + "<<<<<<<<<<<<<<<<<<<<")
 
 	beego.Router("/", &controllers.IndexController{})
+	beego.Router("/docs/*", &controllers.DocsController{})
 	beego.Run()
 }
