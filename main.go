@@ -1,23 +1,23 @@
 package main
 
-import
-(
+import (
 	"fmt"
 	"os"
-	"github.com/astaxie/beego"
+
 	"coreos-china.org/controllers"
+	"coreos-china.org/lib/logger"
+	"github.com/astaxie/beego"
 	"github.com/magiconair/properties"
-	"coreos-china.org/lib"
 )
 
 func isDirExists(path string) bool {
-    fi, err := os.Stat(path)
-    if err != nil {
-        return os.IsExist(err)
-    }else{
-        return fi.IsDir()
-    }
-    return false
+	fi, err := os.Stat(path)
+	if err != nil {
+		return os.IsExist(err)
+	} else {
+		return fi.IsDir()
+	}
+	return false
 }
 
 func initLogger() {
@@ -27,7 +27,7 @@ func initLogger() {
 	log_path := p.MustGetString("logpath")
 	log_filename := p.MustGetString("filename")
 
-	fmt.Sprintf("go-logger prorperties: console-> %s,logpath -> %s,filename -> %s",log_console,log_path,log_filename)
+	fmt.Sprintf("go-logger prorperties: console-> %s,logpath -> %s,filename -> %s", log_console, log_path, log_filename)
 
 	ex := isDirExists(log_path)
 
@@ -41,14 +41,13 @@ func initLogger() {
 
 }
 
-
 func main() {
-
 	initLogger()
 
 	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "this is a test for go-logger" + "<<<<<<<<<<<<<<<<<<<<")
 	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "the second line" + "<<<<<<<<<<<<<<<<<<<<")
 
 	beego.Router("/", &controllers.IndexController{})
+	beego.Router("/docs/*", &controllers.DocsController{})
 	beego.Run()
 }
