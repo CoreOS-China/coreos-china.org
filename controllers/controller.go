@@ -1,11 +1,30 @@
 package controllers
 
 import (
+	"io/ioutil"
 	"strings"
 
 	"github.com/astaxie/beego"
 	"github.com/russross/blackfriday"
 )
+
+var docMap = map[string]*Doc{}
+
+func getDoc(path string) *Doc {
+	doc := docMap[path]
+	if doc != nil {
+		return doc
+	}
+	content, err := ioutil.ReadFile("./static" + path + "/index_ZH_CN.md")
+	if err != nil {
+		content, err = ioutil.ReadFile("./static" + path + "/index.md")
+	}
+	if err == nil {
+		doc = parseToDoc(content)
+	}
+	docMap[path] = doc
+	return doc
+}
 
 type Controller struct {
 	beego.Controller
