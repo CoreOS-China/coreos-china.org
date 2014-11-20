@@ -1,13 +1,9 @@
 package controllers
 
-import (
-	"github.com/astaxie/beego"
-	"github.com/russross/blackfriday"
-	"io/ioutil"
-)
+import "io/ioutil"
 
 type DocsController struct {
-	beego.Controller
+	Controller
 }
 
 func (this *DocsController) Get() {
@@ -16,10 +12,9 @@ func (this *DocsController) Get() {
 	if err != nil {
 		this.Redirect("/", 302)
 	}
-	output := blackfriday.MarkdownCommon(content)
-	this.Data["Title"] = path
-	markdownData := string(output)
-	this.Data["MarkdownData"] = markdownData
+	doc := parseToDoc(content)
+	this.Data["Title"] = doc.meta.Title
+	this.Data["MarkdownData"] = doc.body
 	this.TplNames = "docs.tpl"
 	return
 }
