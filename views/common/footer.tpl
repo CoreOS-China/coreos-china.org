@@ -1,6 +1,6 @@
 <div class="coreos-footer">
   <div class="container" style="text-align:center">
-  <p >© 2014 CoreOs 中国爱好者</p>
+  <p >© 2014 CoreOS 中国爱好者</p>
   </div>
 </div>
 

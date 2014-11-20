@@ -307,15 +307,15 @@
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h3>天生的Cluster模式</h3>
-        <p>CoreOS works well on a single machine, but it's designed to be clustered. Easily run application containers across multiple machines with <a href="/blog/cluster-level-container-orchestration/">fleet</a> and connect them together with service discovery.</p>
-        <a href="/docs/#cluster-management" class="btn btn-default" data-category="Homepage Features" data-event="Docs: Cluster Management">Learn more about Cluster Management</a>
+        <p>CoreOS 可以在单机上独立运行, 但是CoreOS是被设计用来做集群的操作系统. 可以轻松运行一个应用在多个物理节点上，就是利用 <a href="/blog/cluster-level-container-orchestration/" target="_blank" >fleet</a> 和 service discovery（服务发现）来将它们联通起来.</p>
+        <a href="/docs/#cluster-management" class="btn btn-secondary" data-category="Homepage Features" data-event="Docs: Cluster Management" target="_blank" >集群管理</a>
       </div>
     </div>
     <div class="row main-feature feature-right">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <h3>Distributed Systems Tools</h3>
-        <p>Built-in primitives such as distributed locking and master election are the building blocks for large scale distributed systems.</p>
-        <a href="/docs/#distributed-configuration" class="btn btn-default" data-category="Homepage Features" data-event="Using CoreOS: etcd">Learn more about distributed systems tools</a>
+        <h3>分布式系统工具</h3>
+        <p>像分布式锁、领导者选举等，都是一个大型分布式系统所需要的功能，在CoreOS，这些都是内建的功能.</p>
+        <a href="/docs/#distributed-configuration" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: etcd" target="_blank">分布式系统工具</a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
         <a class="no-underline" href="/assets/images/media/Distributed-Lock.png">
@@ -380,9 +380,9 @@
         </pre>
       </div>
       <div class="col-lg-6 col-lg-push-1 col-md-6 col-md-push-1 col-sm-6 col-xs-12">
-        <h3>Service Discovery</h3>
-        <p>Easily locate where services are being run within the cluster and be notified when something changes. Essential for a complex, highly dynamic cluster. Built into CoreOS with high availability and automatic fail-over.</p>
-        <a href="/using-coreos/etcd" class="btn btn-default" data-category="Homepage Features" data-event="Using CoreOS: etcd">Learn more about CoreOS + etcd</a>
+        <h3>服务发现（Service Discovery）</h3>
+        <p>可以轻松找到在集群中运行的服务，并且当服务变化时被集群感知.这是一个复杂、动态集群所必须的.在CoreOS，HA 和 failover 都是内建支持的.</p>
+        <a href="/using-coreos/etcd" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: etcd" target="_blank" >CoreOS + etcd</a>
       </div>
     </div>
 
