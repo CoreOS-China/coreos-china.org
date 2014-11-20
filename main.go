@@ -44,10 +44,10 @@ func initLogger() {
 func main() {
 	initLogger()
 
-	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "this is a test for go-logger" + "<<<<<<<<<<<<<<<<<<<<")
-	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "the second line" + "<<<<<<<<<<<<<<<<<<<<")
+	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "beego startup" + "<<<<<<<<<<<<<<<<<<<<")
 
 	beego.Router("/", &controllers.IndexController{})
 	beego.Router("/docs/*", &controllers.DocsController{})
+	beego.Router("/introduce/", &controllers.IntroController{})
 	beego.Run()
 }
