@@ -1,9 +1,9 @@
 package controllers
 
 import (
-	"io/ioutil"
-
 	"github.com/astaxie/beego"
+	"github.com/russross/blackfriday"
+	"io/ioutil"
 )
 
 type DocsController struct {
@@ -16,8 +16,10 @@ func (this *DocsController) Get() {
 	if err != nil {
 		this.Redirect("/", 302)
 	}
+	output := blackfriday.MarkdownCommon(content)
 	this.Data["Title"] = path
-	this.Data["MarkdownData"] = string(content)
+	markdownData := string(output)
+	this.Data["MarkdownData"] = markdownData
 	this.TplNames = "docs.tpl"
 	return
 }
