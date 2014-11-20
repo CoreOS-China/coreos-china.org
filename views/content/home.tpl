@@ -39,7 +39,7 @@
             <li>
               <ul class="sublinks">
                 <li><a href="/docs/running-coreos/platforms/vagrant" data-category="Run Dropdown" data-event="Docs: Vagrant">Vagrant</a>,</li>
-                <li><a href="/docs/running-coreos/platforms/vmware" data-category="Run Dropdown" data-event="Docs: VMware">VMware</a>,</li>
+                <!-- <li><a href="/docs/running-coreos/platforms/vmware" data-category="Run Dropdown" data-event="Docs: VMware">VMware</a>,</li> -->
                 <!-- <li><a href="/docs/running-coreos/platforms/qemu" data-category="Run Dropdown" data-event="Docs: QEMU">QEMU</a>,</li>
                 <li><a href="/docs/running-coreos/platforms/openstack" data-category="Run Dropdown" data-event="Docs: Openstack">Openstack</a>,</li>
                 <li><a href="/docs/running-coreos/platforms/eucalyptus" data-category="Run Dropdown" data-event="Docs: Eucalyptus">Eucalyptus</a>,</li>
@@ -75,9 +75,9 @@
 
       <div class="col-lg-9 col-md-8 col-sm-7 col-xs-12" id="main-summary">
         <p>CoreOS 是精心设计过的linux发行版，提供一些通用的底层功能，这些功能已经被一些较高知名度的公司所利用，如Google , Facebook 和 Twitter</p>
-        <p>CoreOS 拥有 Apache 2.0 licensed ，可以运行在你现有的硬件设备和云提供商. 你可以在 <a href="https://github.com/coreos" data-category="Homepage Summary" data-event="Github">GitHub</a> 上来查看CoreOS的代码 </p>
+        <p>CoreOS 拥有 Apache 2.0 licensed ，可以运行在你现有的硬件设备和云提供商. 你可以在 <a href="https://github.com/coreos" data-category="Homepage Summary" data-event="Github" target="_blank" >GitHub</a> 上来查看CoreOS的代码 </p>
 
-        <a href="/introduce/overview" class="btn btn-secondary"  data-category="Homepage Summary" data-event="Introduce: Overview">简介</a>
+        <a href="/introduce/" class="btn btn-secondary"  data-category="Homepage Summary" data-event="Introduce: Overview">简介</a>
 
         <a href="/using-coreos/" class="btn btn-secondary"  data-category="Homepage Summary" data-event="Using CoreOS: Overview">快速入门</a>
       </div>

@@ -16,6 +16,6 @@ func (this *IntroController) Get() {
   this.LayoutSections["header"] = "common/header.tpl"
   this.LayoutSections["footer"] = "common/footer.tpl"
   this.LayoutSections["nav"] = "nav/introduce.tpl"
-  this.LayoutSections["content"] = "content/home.tpl" //TODO
+  this.LayoutSections["content"] = "content/introduce.tpl"
   return
 }

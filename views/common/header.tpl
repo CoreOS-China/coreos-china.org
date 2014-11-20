@@ -27,10 +27,10 @@
 <!-- seo 暂时不搞 -->
 
 <!-- Bootstrap core CSS -->
-<link href="http://v3.bootcss.com/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
 <!-- Custom styles for this template -->
-<link href="http://v3.bootcss.com/examples/offcanvas/offcanvas.css" rel="stylesheet">
+<link href="/static/css/offcanvas.css" rel="stylesheet">
 
 <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
 <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
