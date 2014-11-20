@@ -9,18 +9,20 @@ URL: http://coreos-china.org
 # 开发环境
 ## Golang & Beego 环境
 
-1.首先获取fork的项目,不建议使用go get来获取项目，涉及到包导入的问题，麻烦的一比。进入$GOPATH/src 目录
-git clone https://github.com/greyhawk/coreos-china.org.git (自己的项目地址).
+1.首先获取fork的项目,不建议使用go get来获取项目，涉及到包导入的问题，麻烦的一比。
+    
+    cd $GOPATH/src
+    git clone https://github.com/greyhawk/coreos-china.org.git .
 
 2.参考beego http://beego.me/docs/install/bee.md 安装bee工具及框架
 
-3.cd coreos-china.org && bee run 运行项目
+3.运行项目
+
+    cd coreos-china.org && bee run
 
 4.浏览器访问http://127.0.0.1:8080
 
 5.搞定，可直接进行开发调试。
-
----
 
 ## 本地运行：
 
@@ -65,3 +67,5 @@ Step 2. ``` gopm get -v ``` 拉取代码里import的GO包，```-v```是详细输
 Step 3. ``` gopm build -v ``` 构建项目为可执行程序 ，```-v```是详细输出，可以查看错误
 
 Step 4. ``` ./coreos-china.org ``` 运行可执行程序
+
+
