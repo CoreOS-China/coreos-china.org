@@ -25,7 +25,7 @@
     <div class="col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12">
       <h3>透明化升级内核</h3>
       <p> 与用包来升级不同，CoreOS 有一对 主/备 的scheme分区， 升级时作为独立单元进行整体切换. 使得每次更新，更快、健壮、易回滚</p>
-      <a href="/using-coreos/updates" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: Updates" target="_blank" >升级 & 补丁</a>
+      <a href="https://coreos.com/using-coreos/updates" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: Updates" target="_blank" >升级 & 补丁</a>
     </div>
     <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12 hidden-xs">
       <a class="no-underline" href="/assets/images/media/update-diagram.png">
@@ -76,7 +76,7 @@
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <h3>Docker Containers</h3>
         <p>应用程序以 Docker containers 的方式运行在CoreOS上. 可以灵活的包装这些 Containers 并在毫秒级启动</p>
-        <a href="/using-coreos/docker" class="btn btn-secondary" data-category="Homepage Features" data-event="Docs: Cluster Management" target="_blank" >CoreOS + docker</a>
+        <a href="https://coreos.com/using-coreos/docker" class="btn btn-secondary" data-category="Homepage Features" data-event="Docs: Cluster Management" target="_blank" >CoreOS + docker</a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 hidden-xs">
         <a class="no-underline" href="/assets/images/media/Host-Diagram.png">
@@ -382,7 +382,7 @@
       <div class="col-lg-6 col-lg-push-1 col-md-6 col-md-push-1 col-sm-6 col-xs-12">
         <h3>服务发现（Service Discovery）</h3>
         <p>可以轻松找到在集群中运行的服务，并且当服务变化时被集群感知.这是一个复杂、动态集群所必须的.在CoreOS，HA 和 failover 都是内建支持的.</p>
-        <a href="/using-coreos/etcd" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: etcd" target="_blank" >CoreOS + etcd</a>
+        <a href="https://coreos.com/using-coreos/etcd/" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: etcd" target="_blank" >CoreOS + etcd</a>
       </div>
     </div>
 

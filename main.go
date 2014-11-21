@@ -49,5 +49,6 @@ func main() {
 	beego.Router("/", &controllers.IndexController{})
 	beego.Router("/docs/*", &controllers.DocsController{})
 	beego.Router("/introduce/", &controllers.IntroController{})
+	beego.Router("/using-coreos/", &controllers.UsingController{})
 	beego.Run()
 }

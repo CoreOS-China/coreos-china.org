@@ -59,7 +59,7 @@ func parseToDoc(content []byte) *Doc {
 			ns = append(ns, v)
 		} else {
 			s := string(ns)
-			if s == "---" {
+			if strings.Contains(s,"---") {
 				isMetaEnd++
 			}
 			if strings.HasPrefix(s, "title:") {
