@@ -55,24 +55,24 @@
     </div>
     <div class="navbar-collapse collapse coreos-nav-collapse">
       <ul class="nav navbar-nav">
-      <li class="active">
-        <a href="/" data-category="Main Navigation" data-event="Home">主页</a>
-      </li>
-      <li>
-        <a href="/introduce/" data-category="Main Navigation" data-event="Introduce: Overview">简介</a>
-      </li>
-      <li>
-        <a href="/using-coreos/" data-category="Main Navigation" data-event="Using CoreOS: Overview">快速入门</a>
-      </li>
-      <li>
-        <a href="/docs/" data-category="Main Navigation" data-event="Docs: Overview">文档</a>
-      </li>
-      <li>
-        <a href="/blog/" data-category="Main Navigation" data-event="Blog">Blog</a>
-      </li>
-      <li>
-        <a href="/about/" data-category="Main Navigation" data-event="About">关于我们</a>
-      </li>
+        <li>
+          <a href="/" data-category="Main Navigation" data-event="Home">主页</a>
+        </li>
+        <li>
+          <a href="/introduce/" data-category="Main Navigation" data-event="Introduce: Overview">简介</a>
+        </li>
+        <li>
+          <a href="/using-coreos/" data-category="Main Navigation" data-event="Using CoreOS: Overview">快速入门</a>
+        </li>
+        <li class="active">
+          <a href="/docs/" data-category="Main Navigation" data-event="Docs: Overview">文档</a>
+        </li>
+        <li>
+          <a href="/blog/" data-category="Main Navigation" data-event="Blog">Blog</a>
+        </li>
+        <li>
+          <a href="/about/" data-category="Main Navigation" data-event="About">关于我们</a>
+        </li>
       </ul>
     </div>
   </div> <!-- container -->
