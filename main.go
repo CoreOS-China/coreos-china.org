@@ -3,7 +3,8 @@ package main
 import (
 	"fmt"
 	"os"
-
+	"net/http"
+	"html/template"
 	"coreos-china.org/controllers"
 	"coreos-china.org/lib/logger"
 	"github.com/astaxie/beego"
@@ -41,14 +42,28 @@ func initLogger() {
 
 }
 
+func page_not_found(rw http.ResponseWriter, r *http.Request ){
+    t,_:= template.New("404.html").ParseFiles(beego.ViewsPath+"/common/404.html")
+    data :=make(map[string]interface{})
+		data["url"] = "https://coreos.com" + r.URL.Path
+    data["content"] = "page not found"
+    t.Execute(rw, data)
+}
+
+
 func main() {
 	initLogger()
 
 	logger.Info(">>>>>>>>>>>>>>>>>>>>>>>>>" + "beego startup" + "<<<<<<<<<<<<<<<<<<<<")
 
+	beego.Errorhandler("404",page_not_found)
+
 	beego.Router("/", &controllers.IndexController{})
-	beego.Router("/docs/*", &controllers.DocsController{})
+	beego.Router("/docs/", &controllers.DocsController{})
+	beego.Router("/docs/*", &controllers.DocsMdController{})
 	beego.Router("/introduce/", &controllers.IntroController{})
 	beego.Router("/using-coreos/", &controllers.UsingController{})
+	beego.Router("/using-coreos/*", &controllers.UsingSubController{})
+	beego.Router("/about/", &controllers.AboutController{})
 	beego.Run()
 }

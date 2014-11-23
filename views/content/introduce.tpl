@@ -24,7 +24,7 @@
     <div class="row main-feature feature-right">
     <div class="col-lg-6 col-lg-push-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12">
       <h3>透明化升级内核</h3>
-      <p> 与用包来升级不同，CoreOS 有一对 主/备 的scheme分区， 升级时作为独立单元进行整体切换. 使得每次更新，更快、健壮、易回滚</p>
+      <p> CoreOS 有一对 主/备 的scheme分区， 升级时作为独立单元进行整体切换. 使得每次更新，更快、健壮、易回滚</p>
       <a href="https://coreos.com/using-coreos/updates" class="btn btn-secondary" data-category="Homepage Features" data-event="Using CoreOS: Updates" target="_blank" >升级 & 补丁</a>
     </div>
     <div class="col-lg-6 col-lg-pull-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12 hidden-xs">
@@ -364,18 +364,19 @@
     <div class="row main-feature feature-right">
       <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12 hidden-xs">
         <pre>
-        <code>/services
-            /prod-website
-                /nginx-a2fed6
-                /nginx-b7fe4c
-                /nginx-bz6fes
-            /prod-api-proxy
-                /api-a2fed6
-                /api-b7fe4c
-            /prod-db
-                /cass-fe5b2f
-                /cass-bf5ed1
-                /cass-af3ad2
+        <code>
+/services
+  /prod-website
+      /nginx-a2fed6
+      /nginx-b7fe4c
+      /nginx-bz6fes
+  /prod-api-proxy
+      /api-a2fed6
+      /api-b7fe4c
+  /prod-db
+      /cass-fe5b2f
+      /cass-bf5ed1
+      /cass-af3ad2
         </code>
         </pre>
       </div>

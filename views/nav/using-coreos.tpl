@@ -70,6 +70,9 @@
         <li>
           <a href="/blog/" data-category="Main Navigation" data-event="Blog">Blog</a>
         </li>
+        <li>
+          <a href="/about/" data-category="Main Navigation" data-event="About">关于我们</a>
+        </li>
       </ul>
     </div>
   </div>

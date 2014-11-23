@@ -4,6 +4,7 @@ import (
 	"io/ioutil"
 	"strings"
 
+	"coreos-china.org/lib/logger"
 	"github.com/astaxie/beego"
 	"github.com/russross/blackfriday"
 )
@@ -15,10 +16,22 @@ func getDoc(path string) *Doc {
 	if doc != nil {
 		return doc
 	}
-	content, err := ioutil.ReadFile("./static" + path + "/index_ZH_CN.md")
+	//1.get localize from app.conf
+	localize :=  beego.AppConfig.String("localize")
+
+	logger.Debug("read app.conf properties localize = " + localize)
+
+	//2.read from path
+	content, err := ioutil.ReadFile("./static" + "/" + localize + "/" + path + "/index.md")
 	if err != nil {
 		content, err = ioutil.ReadFile("./static" + path + "/index.md")
 	}
+
+	//3.if any not matched
+	if err != nil {
+		content, err = ioutil.ReadFile("./static" + "/" + localize + "/" + "404.md")
+	}
+
 	if err == nil {
 		doc = parseToDoc(content)
 	}

@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<!-- saved from url=(0041)http://v3.bootcss.com/examples/offcanvas/ -->
 <html lang="en">
   <head>
     <title>{{.Title}}</title>

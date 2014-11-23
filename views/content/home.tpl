@@ -19,31 +19,31 @@
             <li role="presentation" class="dropdown-header">裸机</li>
             <li>
               <ul class="sublinks">
-                <!-- <li><a href="/docs/running-coreos/bare-metal/booting-with-pxe" data-category="Run Dropdown" data-event="Docs: PXE">PXE</a>,</li>
-                <li><a href="/docs/running-coreos/bare-metal/booting-with-ipxe" data-category="Run Dropdown" data-event="Docs: iPXE">iPXE</a>,</li> -->
-                <li><a href="/docs/running-coreos/bare-metal/installing-to-disk" data-category="Run Dropdown" data-event="Docs: Install to Disk">硬盘安装</a></li>
+                <li><a href="/docs/running-coreos/bare-metal/booting-with-pxe" data-category="Run Dropdown" data-event="Docs: PXE" target="_blank" >PXE</a>,</li>
+                <li><a href="/docs/running-coreos/bare-metal/booting-with-ipxe" data-category="Run Dropdown" data-event="Docs: iPXE" target="_blank" >iPXE</a>,</li>
+                <li><a href="/docs/running-coreos/bare-metal/installing-to-disk" data-category="Run Dropdown" data-event="Docs: Install to Disk" target="_blank" >硬盘安装</a></li>
               </ul>
             </li>
             <li role="presentation" class="dropdown-header">云主机提供商</li>
             <li>
               <ul class="sublinks">
-                <!-- <li><a href="/docs/running-coreos/cloud-providers/ec2" data-category="Run Dropdown" data-event="Docs: EC2">EC2</a>,</li> -->
-                <li><a href="/docs/running-coreos/cloud-providers/digitalocean" data-category="Run Dropdown" data-event="Docs: DigitalOcean">DigitalOcean</a>,</li>
-                <!-- <li><a href="/docs/running-coreos/cloud-providers/google-compute-engine" data-category="Run Dropdown" data-event="Docs: GCE">GCE</a>,</li>
-                <li><a href="/docs/running-coreos/cloud-providers/rackspace" data-category="Run Dropdown" data-event="Docs: Rackspace">Rackspace</a>,</li>
-                <li><a href="/docs/running-coreos/cloud-providers/azure" data-category="Run Dropdown" data-event="Docs: Azure">Azure</a>,</li>
-                <li><a href="/docs/running-coreos/cloud-providers/brightbox" data-category="Run Dropdown" data-event="Docs: Brightbox">Brightbox</a></li> -->
+                <li><a href="https://coreos.com/docs/running-coreos/cloud-providers/ec2/" data-category="Run Dropdown" data-event="Docs: EC2" target="_blank" >EC2</a>,</li>
+                <li><a href="/docs/running-coreos/cloud-providers/digitalocean" data-category="Run Dropdown" data-event="Docs: DigitalOcean" target="_blank" >DigitalOcean</a>,</li>
+                <li><a href="/docs/running-coreos/cloud-providers/google-compute-engine" data-category="Run Dropdown" data-event="Docs: GCE" target="_blank" >GCE</a>,</li>
+                <li><a href="/docs/running-coreos/cloud-providers/rackspace" data-category="Run Dropdown" data-event="Docs: Rackspace" target="_blank" >Rackspace</a>,</li>
+                <li><a href="/docs/running-coreos/cloud-providers/azure" data-category="Run Dropdown" data-event="Docs: Azure" target="_blank" >Azure</a>,</li>
+                <li><a href="/docs/running-coreos/cloud-providers/brightbox" data-category="Run Dropdown" data-event="Docs: Brightbox" target="_blank" >Brightbox</a></li>
               </ul>
             </li>
             <li role="presentation" class="dropdown-header">虚拟化平台</li>
             <li>
               <ul class="sublinks">
-                <li><a href="/docs/running-coreos/platforms/vagrant" data-category="Run Dropdown" data-event="Docs: Vagrant">Vagrant</a>,</li>
-                <!-- <li><a href="/docs/running-coreos/platforms/vmware" data-category="Run Dropdown" data-event="Docs: VMware">VMware</a>,</li> -->
-                <!-- <li><a href="/docs/running-coreos/platforms/qemu" data-category="Run Dropdown" data-event="Docs: QEMU">QEMU</a>,</li>
-                <li><a href="/docs/running-coreos/platforms/openstack" data-category="Run Dropdown" data-event="Docs: Openstack">Openstack</a>,</li>
-                <li><a href="/docs/running-coreos/platforms/eucalyptus" data-category="Run Dropdown" data-event="Docs: Eucalyptus">Eucalyptus</a>,</li>
-                <li><a href="/docs/running-coreos/platforms/iso" data-category="Run Dropdown" data-event="Docs: ISO">ISO Image</a></li> -->
+                <li><a href="/docs/running-coreos/platforms/vagrant" data-category="Run Dropdown" data-event="Docs: Vagrant" target="_blank" >Vagrant</a>,</li>
+                <li><a href="/docs/running-coreos/platforms/vmware" data-category="Run Dropdown" data-event="Docs: VMware" target="_blank" >VMware</a>,</li>
+                <li><a href="/docs/running-coreos/platforms/qemu" data-category="Run Dropdown" data-event="Docs: QEMU" target="_blank" >QEMU</a>,</li>
+                <li><a href="/docs/running-coreos/platforms/openstack" data-category="Run Dropdown" data-event="Docs: Openstack" target="_blank" >Openstack</a>,</li>
+                <li><a href="/docs/running-coreos/platforms/eucalyptus" data-category="Run Dropdown" data-event="Docs: Eucalyptus" target="_blank" >Eucalyptus</a>,</li>
+                <li><a href="/docs/running-coreos/platforms/iso" data-category="Run Dropdown" data-event="Docs: ISO" target="_blank" >ISO Image</a></li>
               </ul>
             </li>
           </ul>

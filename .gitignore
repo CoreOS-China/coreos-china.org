@@ -3,6 +3,7 @@
 coreos-china.org
 .settings/
 *.log
+*.log.*
 Thumbs.db
 .idea/
 coreos-china.org.exe

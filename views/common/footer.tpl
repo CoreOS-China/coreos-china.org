@@ -12,7 +12,7 @@
 
 <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 <script src="/static/js/ie10-viewport-bug-workaround.js"></script>
-
+<script src="/static/js/animate-clustering.js"></script> <!-- for using-coreos -->
 <script src="/static/js/offcanvas.js"></script>
 <script type="text/javascript">
   !window.jQuery && document.write('<script src="/static/js/jquery.min.js"><\/script>');

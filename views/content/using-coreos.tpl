@@ -3,7 +3,7 @@
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
       <h1>Using CoreOS</h1>
-      <h2>CoreOS is designed to give you compute capacity that is dynamically scaled and managed, similar to how infrastructure might be managed at large web companies like Google.</h2>
+      <h2>CoreOS 设计为弹性扩展及管理的大容量计算, 类似Google管理其下的一些基础设施一样.</h2>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMin" height="250px" viewBox="0 0 497 343" enable-background="new 0 0 497 343" xml:space="preserve">
@@ -119,26 +119,26 @@
     <h2>CoreOS Overview</h2>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>CoreOS is designed for security, consistency, and reliability. Instead of installing packages via yum or apt, CoreOS uses Linux containers to manage your services at a higher level of abstraction. A single service's code and all dependencies are packaged within a container that can be run on one or many CoreOS machines.</p>
-        <p>Linux containers provide similar benefits as complete virtual machines, but focused on applications instead of entire virtualized hosts. Since containers don’t run their own Linux kernel or require a hypervisor, they have almost no performance overhead. The lack of overhead allows you to gain density which means fewer machines to operate and a lower compute spend.</p>
+        <p>CoreOS 是安全, 一致性, 可用性的操作系统. CoreOS 做了一次高级别的抽象，那就是利用 Linux containers 去管理你的 services，因此你不能通过 yum 或 apt 来安装软件,  一个单独的service应该囊括了所有的依赖，并封装到一起，它可以在一台或多台CoreOS集群的机器中运行.</p>
+        <p>Linux containers 有着完全虚拟机一样的好处, 但是更侧重应用层. 容器不需要单独的Linux kernel，也不需要虚拟机监视器，因此几乎没有任何性能上的开销, 较低的开销可以让你拥有更多的 containers ，这样就节省了物理机的开销.</p>
         <p>
-          CoreOS runs on almost any platform, including
-          <a href="/docs/vagrant/" data-category="Using CoreOS Summary" data-event="Docs: Vagrant">Vagrant</a>,
-          <a href="/docs/ec2/" data-category="Using CoreOS Summary" data-event="Docs: EC2">Amazon EC2</a>,
-          <a href="/docs/qemu/" data-category="Using CoreOS Summary" data-event="Docs: QEMU/KVM">QEMU/KVM</a>,
-          <a href="/docs/vmware/" data-category="Using CoreOS Summary" data-event="Docs: VMware"> VMware</a> and
-          <a href="/docs/openstack/" data-category="Using CoreOS Summary" data-event="Docs: OpenStack">OpenStack</a> and your
-          <a href="/pilot" data-category="Using CoreOS Summary" data-event="Learn More Paid Pilot">own hardware</a>.
-          If you're currently running in the cloud, running a single CoreOS cluster on two different clouds or cloud + bare metal is supported and encouraged.
+          CoreOS 可以在大多数平台上运行，包括
+          <a href="/docs/running-coreos/platforms/vagrant/" data-category="Using CoreOS Summary" data-event="Docs: Vagrant" target="_blank">Vagrant</a>,
+          <!-- 这里的ec2 md暂时处理不了，跳转官网 --><a href="https://coreos.com/docs/running-coreos/cloud-providers/ec2/" data-category="Using CoreOS Summary" data-event="Docs: EC2" target="_blank" >Amazon EC2</a>,
+          <a href="/docs/running-coreos/platforms/qemu/" data-category="Using CoreOS Summary" data-event="Docs: QEMU/KVM" target="_blank">QEMU/KVM</a>,
+          <a href="/docs/running-coreos/platforms/vmware/" data-category="Using CoreOS Summary" data-event="Docs: VMware" target="_blank"> VMware</a> ,
+          <a href="/docs/running-coreos/platforms/openstack/" data-category="Using CoreOS Summary" data-event="Docs: OpenStack" target="_blank">OpenStack</a> 和
+          <a href="https://coreos.com/pilot/" data-category="Using CoreOS Summary" data-event="Learn More Paid Pilot" target="_blank" >hardware</a>.
+          如果你打算在云上运行, CoreOS cluster 支持在在不同的云提供商 或 云提供商 + 物理机 的方式.
         </p>
-        <p>Let’s walk through each of the building blocks of CoreOS &mdash; etcd, docker and systemd.</p>
+        <p>让我们一起认识一下其他组件， CoreOS &mdash; etcd, docker and systemd.</p>
       </div>
     </div>
   </div>
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Run Services with docker</h2>
+    <h2>用 docker 运行 services</h2>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a class="no-underline" href="/assets/images/media/Three-Tier-Webapp.png">
@@ -263,15 +263,15 @@
         <div class="caption">3-tiered webapp running on a CoreOS cluster</div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <p>The main building block of CoreOS is docker, a Linux container engine, where your applications and code run. Docker is installed on each CoreOS machine. You should construct a container for each of your services (web server, caching, database) start them with fleet and connect them together by reading and writing to etcd.</p>
-        <p>CoreOS doesn't ship a package manager &mdash; any software you would like to use must run within a container. You can quickly try out a Ubuntu container in the <a href="/docs/guides/docker/">step by step tutorial</a>. The end goal is to have your build system output a container as the final artifact. CoreOS <a href="/using-coreos/systemd">uses systemd</a> and <a href="/using-coreos/clustering">fleet</a> to manage the containers that need to be started based on the resulting build artifact.</p>
+        <p>CoreOS 利用 docker 来运行你的 containers 应用. Docker在CoreOS是默认安装的. 你应该为每一个service，例如 (web应用, 缓存, 数据库) 封装成一个docker container. 并且利用 fleet 启动它们，以及通过读写 etcd 的方式来进行container之间的交互.</p>
+        <p>CoreOS 不支持包管理器，所有软件都应该封装在 container 中运行. 你可以通过这个 <a href="/docs/launching-containers/building/getting-started-with-docker/" target="_blank">教程</a> 来了解docker. CoreOS 利用 <a href="/using-coreos/systemd"> systemd</a> 和 <a href="/using-coreos/clustering">fleet</a> 管理 containers 并随着系统构建好后自启动.</p>
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="/using-coreos/docker" class="btn btn-primary" data-category="docker More Information" data-event="Using CoreOS: docker">Read more about docker + CoreOS</a>
+          <h4>扩展阅读</h4>
+          <a href="/using-coreos/docker" class="btn btn-primary" data-category="docker More Information" data-event="Using CoreOS: docker">docker + CoreOS</a>
           <ul>
-          <li><a href="/docs/guides/docker" data-category="docker More Information" data-event="Docs: Getting Started docker">docker Getting Started Guide</a></li>
-          <li><a href="http://www.docker.io/" data-category="docker More Information" data-event="Docker Website">docker Website</a></li>
-          <li><a href="http://www.docker.io/gettingstarted/" data-category="docker More Information" data-event="Docker Getting Started Guide">Getting Started from docker.io</a></li>
+          <li><a href="/docs/launching-containers/building/getting-started-with-docker/" data-category="docker More Information" data-event="Docs: Getting Started docker" target="_blank">初识 docker</a></li>
+          <li><a href="http://www.docker.io/" data-category="docker More Information" data-event="Docker Website" target="_blank" >docker 官网</a></li>
+          <li><a href="http://www.docker.io/gettingstarted/" data-category="docker More Information" data-event="Docker Getting Started Guide" target="_blank" >docker 官网详解</a></li>
           </ul>
         </div>
       </div>
@@ -281,18 +281,18 @@
 
 <div class="super-container">
   <div class="container about">
-    <h2>Cluster Management with fleet</h2>
+    <h2>用 fleet 管理集群</h2>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>The recommended way to run docker containers on your CoreOS is with fleet, a tool that presents your entire cluster as a single init system. Fleet works by receiving <a href="/using-coreos/systemd/">systemd unit files</a> and scheduling them onto machines in the cluster based on declared conflicts and other preferences encoded in the unit file.</p>
-        <p>fleet can deploy high availability services by ensuring that service containers are not located on the same machine, availability zone or region. fleet also supports collocation with the same properties. Very complex architectures are possible by combining these properties. </p>
+        <p>建议用 fleet 来运行docker containers, 它可以让你在一个节点上操作整个集群. Fleet 接收 <a href="/using-coreos/systemd/">systemd unit files</a> ，这个文件描述了如何启动以及一些策略，这样 coreos 就可以根据策略把它们调度起来. </p>
+        <p>fleet 可以让 service containers 运行在不同机器, 从而部署实现了高可用 HA. fleet 也支持相同属性的组合，复杂的结构也是通过属性组合而成的. </p>
         <div class="more-info">
           <h4>More Information</h4>
-          <a href="/using-coreos/clustering" class="btn btn-primary" data-category="fleet More Information" data-event="Using CoreOS: clustering">Read more about CoreOS clustering</a>
+          <a href="/using-coreos/clustering" class="btn btn-primary" data-category="fleet More Information" data-event="Using CoreOS: clustering" target="_blank" >扩展阅读</a>
           <ul>
-          <li><a href="/docs/launching-containers/launching/launching-containers-fleet" data-category="fleet More Information" data-event="Docs: Launching Containers fleet">Launching Containers with Fleet guide</a></li>
-          <li><a href="/docs/launching-containers/launching/fleet-example-deployment" data-category="fleet More Information" data-event="Docs: Example Deployment fleet">Example Deployment with Fleet</a></li>
-          <li><a href="/docs/launching-containers/launching/fleet-using-the-client" data-category="fleet More Information" data-event="Docs: Controlling the Cluster with fleetctl">Controlling the Cluster with fleetctl</a></li>
+          <li><a href="/docs/launching-containers/launching/launching-containers-fleet" data-category="fleet More Information" data-event="Docs: Launching Containers fleet" target="_blank" >fleet 运行容器</a></li>
+          <li><a href="https://coreos.com/docs/launching-containers/launching/fleet-example-deployment/" data-category="fleet More Information" data-event="Docs: Example Deployment fleet" target="_blank" >利用 Fleet 部署 </a></li>
+          <li><a href="https://coreos.com/docs/launching-containers/launching/fleet-using-the-client/" data-category="fleet More Information" data-event="Docs: Controlling the Cluster with fleetctl" target="_blank" >fleetctl 控制集群</a></li>
         </ul>
         </div>
       </div>
@@ -301,7 +301,7 @@
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Service Discovery with etcd</h2>
+    <h2>etcd 服务发现 (Service Discovery)</h2>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" preserveAspectRatio="xMidYMin" height="100px" viewBox="0 0 399 75.26" enable-background="new 0 0 399 75.26" xml:space="preserve">
@@ -336,16 +336,16 @@
         <div class="caption">Read the master database IP address from etcd.</div>
       </div>
       <div class="col-lg-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12">
-        <p>Each host provides a local endpoint for etcd, which is used for service discovery and reading/writing configuration values. Since etcd is replicated, all changes are reflected across the entire cluster. Your application can always reach the local etcd instance at 127.0.0.1:4001.</p>
-        <p>Let's say we're running a simple web app like Wordpress. Instead of hardcoding our database address with in the config file, we'll fetch it from etcd instead. It's as simple as curl-ing <code>http://127.0.0.1:4001/v1/keys/database</code> and using the response within your DB connection code.
-        <p>A more advanced example involves service discovery for a proxy. Each of your app containers can announce itself to etcd after starting up and your proxy is listening for changes on the same value. Now your proxy container automatically knows when to reconfigure itself and new containers automatically receive traffic. Building service discovery into your application allows you to add more machines and scale your services seamlessly.</p>
+        <p>cluster中的每一个节点，都是总 etcd 的一个端点, 本地的etcd服务可以用来 服务发现 及 读写配置，并影响整个 cluster. 本地应用程序访问自己的 etcd服务，通过 127.0.0.1:4001.</p>
+        <p>让我们运行一个简单的应用，如 Wordpress. 我们向 etcd 询问数据库地址，而避免硬编码. 请求 <code>http://127.0.0.1:4001/v1/keys/database</code> 并获取数据库地址.
+        <p>service discovery 还可以用来做代理模式. 在启动完containers后，可以再启动一个代理容器，用于服务发现，监听etcd里的值的变化. 当配置改变或新增容器时，代理容器就会感知到. 为你的应用添加 service discovery ，就可以无缝平行扩展.</p>
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="/using-coreos/etcd" class="btn btn-primary" data-category="etcd More Information" data-event="Using CoreOS: etcd">Read more about etcd + CoreOS</a>
+          <h4>扩展阅读</h4>
+          <a href="/using-coreos/etcd" class="btn btn-primary" data-category="etcd More Information" data-event="Using CoreOS: etcd" target="_blank" >etcd + CoreOS</a>
           <ul>
-            <li><a href="/docs/guides/etcd" data-category="etcd More Information" data-event="Docs: Getting Started etcd">etcd Getting Started Guide</a></li>
-            <li><a href="https://github.com/coreos/etcd" data-category="etcd More Information" data-event="Github" data-event="Github: etcd">etcd on GitHub</a></li>
-            <li><a href="https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md" data-category="etcd More Information" data-event="Github: etcd Projects">Projects Using etcd</a></li>
+            <li><a href="/docs/distributed-configuration/getting-started-with-etcd/" data-category="etcd More Information" data-event="Docs: Getting Started etcd" target="_blank" >etcd 使用手册</a></li>
+            <li><a href="https://github.com/coreos/etcd" data-category="etcd More Information" data-event="Github" data-event="Github: etcd" target="_blank" >etcd on GitHub</a></li>
+            <li><a href="https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md" data-category="etcd More Information" data-event="Github: etcd Projects" target="_blank" >Projects Using etcd</a></li>
           </ul>
         </div>
       </div>
@@ -355,16 +355,16 @@
 
 <div class="super-container">
   <div class="container about">
-    <h2>Securing CoreOS</h2>
+    <h2> CoreOS 安全机制</h2>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>CoreOS provides stable, reliable, updates to all machines as long as they can connect to our update service. We believe that automatic updates are critical to keeping a system secure. All updates are signed offline from the build process and each update's metadata is transmitted to the machine via an SSL cert signed by our private CA. This metadata is verified against the downloaded update before it is applied to the machine.</p>
-        <p>The recommended way to secure your entire cluster is to use a physical firewall, EC2 Security Groups or a similar feature to restrict all traffic unless allowed. If you're running containers that are used for load balancing or caching, consider exposing the ports for those containers instead of all containers. You can even automate this process with etcd.</p>
+        <p>CoreOS 提供了一个安全、可靠、更新稳定的服务. 我们相信自动更新可以使得系统更加稳固. 所有更新均来自官方，并将所有更新元数据，通过 SSL 加密传输. 并且经过加密校验后才真正进行更新操作.</p>
+        <p>推荐为集群使用防火墙,  如果你运行的是负载均衡或缓存这样的容器, 建议不要暴露端口向所有容器. </p>
         <div class="more-info">
-        <h4>More Information</h4>
-        <a href="/using-coreos/updates" class="btn btn-primary" data-category="Updates More Information" data-event="Using CoreOS: Updates">Read more about automatic updates</a>
+        <h4>扩展阅读</h4>
+        <a href="/using-coreos/updates" class="btn btn-primary" data-category="Updates More Information" data-event="Using CoreOS: Updates" target="_blank" >自动更新</a>
         <ul>
-        <li><a href="/blog/recoverable-system-upgrades/" data-category="Updates More Information" data-event="Blog: Recoverable System Upgrades">Blog Post on Recoverable System Upgrades</a></li>
+        <li><a href="https://coreos.com/blog/recoverable-system-upgrades/" data-category="Updates More Information" data-event="Blog: Recoverable System Upgrades" target="_blank" >可回滚的更新</a></li>
         </ul>
       </div>
     </div>

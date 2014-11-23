@@ -55,7 +55,7 @@
     </div>
     <div class="navbar-collapse collapse coreos-nav-collapse">
       <ul class="nav navbar-nav">
-      <li class="active">
+      <li >
         <a href="/" data-category="Main Navigation" data-event="Home">主页</a>
       </li>
       <li>
@@ -70,7 +70,7 @@
       <li>
         <a href="/blog/" data-category="Main Navigation" data-event="Blog">Blog</a>
       </li>
-      <li>
+      <li class="active" >
         <a href="/about/" data-category="Main Navigation" data-event="About">关于我们</a>
       </li>
       </ul>
