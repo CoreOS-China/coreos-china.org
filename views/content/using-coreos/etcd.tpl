@@ -1,7 +1,7 @@
 <div class="masthead hexagons">
   <div class="container">
     <h1>etcd</h1>
-    <h2>A highly-available key value store for shared configuration and service discovery.</h2>
+    <h2>一个高可用的key-value存储服务，可用于共享配置及服务发现（service discovery）</h2>
   </div>
 </div>
 <div class="super-container">
@@ -59,29 +59,29 @@
         <div class="caption">Logs replicated to each follower in the cluster.</div>
       </div>
       <div class="col-lg-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12">
-        <p>etcd is an open-source distributed key value store that provides the backbone of CoreOS clusters and the etcd client runs on each machine in a cluster. etcd gracefully handles master election during network partitions and the loss of the current master.</p>
-        <p>Your applications can read and write data into etcd. Common examples are storing database connection details, cache settings, feature flags, and more.</p>
-        <h4>Features</h4>
+        <p>etcd 是一个开源的分布式存储，是 CoreOS clusters 的核心功能，并且 etcd client 运行在集群中的每台机器上. etcd 通过网络分区，优雅地处理领导者选举（master election）</p>
+        <p>应用可以向etcd读写数据，典型场景就是保存数据库连接信息、缓存配置、特征值等</p>
+        <h4>特点</h4>
         <ul>
-          <li>Simple, curl-able API (HTTP + JSON)</li>
-          <li>Optional SSL client cert authentication</li>
-          <li>Benchmarked 1000s of writes/s per instance</li>
-          <li>Properly distributed using Raft protocol</li>
-          <li>Keys support TTL</li>
-          <li>Atomic test and set</li>
-          <li>Easily listen for changes to a prefix via HTTP long-polling</li>
+          <li>简洁的 API (HTTP + JSON)</li>
+          <li>可选的 SSL client cert authentication</li>
+          <li>压测 1000s of writes/s per instance</li>
+          <li>在分布式中用 Raft protocol 处理</li>
+          <li>key值支持 TTL（time to live）</li>
+          <li>原子性操作</li>
+          <li>通过http长轮询可以轻易监听到改变</li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="/docs/guides/etcd" class="btn btn-primary" data-category="etcd More Information" data-event="Docs: Getting Started etcd">etcd Getting Started Guide</a>
+          <h4>扩展阅读</h4>
+          <a href="/docs/guides/etcd" class="btn btn-primary" data-category="etcd More Information" data-event="Docs: Getting Started etcd" taget="_blank" >etcd 向导</a>
           <ul>
-            <li><a href="https://github.com/coreos/etcd#etcd" data-category="etcd More Information" data-event="Github: etcd Documentation">etcd Documentation</a></li>
-            <li><a href="https://github.com/coreos/etcd" data-category="etcd More Information" data-event="Github: etcd">etcd on GitHub</a></li>
-            <li><a href="https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md" data-category="etcd More Information" data-event="Github: etcd Projects">Projects Using etcd</a></li>
+            <li><a href="https://github.com/coreos/etcd#etcd" data-category="etcd More Information" data-event="Github: etcd Documentation" taget="_blank" >etcd 文档</a></li>
+            <li><a href="https://github.com/coreos/etcd" data-category="etcd More Information" data-event="Github: etcd" taget="_blank" >etcd on GitHub</a></li>
+            <li><a href="https://github.com/coreos/etcd/blob/master/Documentation/libraries-and-tools.md" data-category="etcd More Information" data-event="Github: etcd Projects" taget="_blank" >Projects Using etcd</a></li>
           </ul>
         </div>
       </div>
@@ -90,18 +90,18 @@
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Technical Overview</h2>
+    <h2>技术实现</h2>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>etcd is written in Go which has excellent cross-platform support, small binaries and a great community behind it. Communication between etcd machines is handled via the Raft consensus algorithm.</p>
-        <p>Latency from the etcd master is the most important metric to track and the built-in dashboard has a view dedicated to this. In our testing, severe latency will introduce instability within the cluster because Raft is only as fast as the slowest machine in the majority. You can mitigate this issue by <a href="/docs/cluster-management/debugging/etcd-tuning/">properly tuning</a> the cluster. etcd has been pre-tuned on <a href="/docs/running-coreos/cloud-providers/ec2/">cloud</a> <a href="/docs/running-coreos/cloud-providers/rackspace/">providers</a> with highly variable networks.</p>
+        <p>etcd 用 Go 语言写的，因为有出色的跨平台、较小的二进制程序、以及强大的公司支持的它. 不同机器上的 etcd 通讯采用了 Raft 一致性算法.</p>
+        <p>Latency from the etcd master is the most important metric to track and the built-in dashboard has a view dedicated to this. In our testing, severe latency will introduce instability within the cluster because Raft is only as fast as the slowest machine in the majority. You can mitigate this issue by <a href="/docs/cluster-management/debugging/etcd-tuning/" target="_blank" >properly tuning</a> the cluster. etcd has been pre-tuned on <a href="/docs/running-coreos/cloud-providers/ec2/"  target="_blank" >cloud</a> <a href="/docs/running-coreos/cloud-providers/rackspace/"  target="_blank" >providers</a> with highly variable networks.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="https://speakerdeck.com/benbjohnson/raft-the-understandable-distributed-consensus-protocol" class="btn btn-primary" data-category="etcd Tech Overview More Information" data-event="Raft Presentation">Presentation: How Raft Works</a>
+          <h4>扩展阅读</h4>
+          <a href="https://speakerdeck.com/benbjohnson/raft-the-understandable-distributed-consensus-protocol" class="btn btn-primary" data-category="etcd Tech Overview More Information" data-event="Raft Presentation"  target="_blank" >How Raft Works</a>
         </div>
       </div>
     </div>
@@ -109,14 +109,14 @@
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Securing etcd</h2>
+    <h2>etcd安全性</h2>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <p>etcd should not be exposed outside of the CoreOS cluster. The recommended way to secure your entire cluster (and etcd) is to use a physical firewall, EC2 Security Groups or a similar feature to restrict all traffic unless allowed. Communication within the cluster can be secured with <a href="/docs/distributed-configuration/etcd-security/" data-category="etcd Security" data-event="Docs: Reading/Writing over HTTPS">client certificates</a>. Access control lists (ACLs) will be added to etcd in the near future.</p>
         <p>If you're running containers that are used for load balancing or caching, consider exposing only those containers instead of all containers.</p>
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="/docs/distributed-configuration/etcd-security/" class="btn btn-primary" data-category="etcd Security" data-event="Docs: Reading/Writing over HTTPS">Reading and Writing to etcd over HTTPS</a>
+          <h4>扩展阅读</h4>
+          <a href="/docs/distributed-configuration/etcd-security/" class="btn btn-primary" data-category="etcd Security" data-event="Docs: Reading/Writing over HTTPS" target="_blank">Reading and Writing to etcd over HTTPS</a>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Using etcd with docker containers</h2>
+    <h2>etcd 和 docker containers 结合</h2>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-md-push-6 col-sm-6 col-sm-push-6 col-xs-12">
         <a class="no-underline" href="/assets/images/media/container-lifecycle.png">
@@ -193,15 +193,15 @@
         <div class="caption">Container lifecycle and communication with etcd.</div>
       </div>
       <div class="col-lg-6 col-md-6 col-md-pull-6 col-sm-6 col-sm-pull-6 col-xs-12">
-        <p>Docker containers can read, write and listen to etcd over the docker0 network interface. With these three actions you construct extremely sophisticated orchestration to happen whenever etcd values change.</p>
-        <p>A common example of listening for changes is to reconfigure an upstream proxy when a new container of an application is started.</p>
+        <p>Docker containers 可以通过 docker0 网桥进行对etcd的读写. With these three actions you construct extremely sophisticated orchestration to happen whenever etcd values change.</p>
+        <p>一个典型场景就是，当有新的 docker container 启动时候，可以重新加载配置并反向代理它</p>
         <p>To keep service registration logic outside of your main codebase, <a href="/docs/launching-containers/launching/launching-containers-fleet/#run-a-simple-sidekick">"sidekick" units</a> can be run next to the main systemd unit. Sidekicks will be scheduled by <a href="/using-coreos/clustering">fleet</a> onto the same machine as the main unit and will stop if the main unit stops for any reason.</p>
         <div class="more-info">
           <h4>More Information</h4>
-          <a href="/using-coreos/docker" class="btn btn-primary" data-category="docker More Information" data-event="Using CoreOS: docker">Read more about docker + CoreOS</a>
+          <a href="/using-coreos/docker" class="btn btn-primary" data-category="docker More Information" data-event="Using CoreOS: docker" target="_blank">docker + CoreOS</a>
           <ul>
-            <li><a href="/docs/launching-containers/building/getting-started-with-docker" data-category="docker More Information" data-event="Docs: Getting Started docker">docker Getting Started Guide</a></li>
-            <li><a href="/docs/distributed-configuration/getting-started-with-etcd/#reading-and-writing-from-inside-a-container" data-category="docker More Information" data-event="Docs: Getting Started etcd">Using etcd Within a Container</a></li>
+            <li><a href="/docs/launching-containers/building/getting-started-with-docker" data-category="docker More Information" data-event="Docs: Getting Started docker" target="_blank">docker 手册</a></li>
+            <li><a href="/docs/distributed-configuration/getting-started-with-etcd/#reading-and-writing-from-inside-a-container" data-category="docker More Information" data-event="Docs: Getting Started etcd" target="_blank">Using etcd Within a Container</a></li>
           </ul>
         </div>
       </div>
