@@ -7,6 +7,14 @@ type IndexController struct {
 }
 
 func (this *IndexController) Get() {
-	this.TplNames = "index.tpl"
+
+	this.Layout = "layout/home.tpl"
+  this.TplNames = "home.tpl"
+  this.LayoutSections = make(map[string]string)
+  this.LayoutSections["header"] = "common/header.tpl"
+  this.LayoutSections["footer"] = "common/footer.tpl"
+	this.LayoutSections["nav"] = "nav/home.tpl"
+	this.LayoutSections["content"] = "content/home.tpl"
+
 	return
 }
