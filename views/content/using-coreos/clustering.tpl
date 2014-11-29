@@ -1,16 +1,16 @@
 <div class="masthead hexagons">
   <div class="container">
-    <h1>Cluster Management</h1>
-    <h2>Container management and deployment for your cluster using fleet</h2>
+    <h1>集群管理</h1>
+    <h2>用 fleet 管理部署你的集群</h2>
   </div>
 </div>
 <div class="super-container product-page">
   <div class="container about">
-    <h2>Easy Warehouse-scale Computing</h2>
+    <h2>更方便海量计算</h2>
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-          <p>With <a href="https://github.com/coreos/fleet" data-category="fleet Overview" data-event="Github: fleet">fleet</a>, you can treat your CoreOS cluster as if it shared a single init system. It encourages users to write applications as small, ephemeral units that can easily migrate around a cluster of self-updating CoreOS machines.</p>
-          <p>By utilizing fleet, a devops team can focus on running containers that make up a service, without having to worry about the individual machines each container is running on. If your application consists of 5 containers, fleet will guarantee that they stay running somewhere on the cluster. If a machine fails or needs to be updated, containers running on that machine will be moved to other qualified machines in the cluster.</p>
+          <p>通过 <a href="https://github.com/coreos/fleet" data-category="fleet Overview" data-event="Github: fleet" target="_blank" >fleet</a>, 你可以操作 CoreOS cluster 像单独的机器一样. 尽可能的精简自己的应用，这样当 CoreOS 升级时会更方便迁移.</p>
+          <p>通过fleet, 开发者可以将精力集中到 组成 service 的容器, 而不需要担心哪些容器运行在具体的机器上. 如果你个应用由 5 个 containers 组成, fleet 会确保他们分布在集群上运行. 当机器宕机或需要硬件升级时, containers 将不会在此机器上运行，并且在集群中选择符合策略的机器来运行它们.</p>
         </div>
       </div>
       <div class="row graphic schedule">
@@ -340,31 +340,31 @@
       </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <p>High availability is achieved by ensuring that service containers are not located on the same machine, availability zone or region. fleet also supports collocation with the same properties.</p>
-        <p>Complex architectures are possible by combining these properties. For example, preventing a database container from being deployed on the same machine as your distributed backups for that database is a very good idea.</p>
+        <p>High availability 的实现是让 services 运行在不同的主机上、或不同的区域上. fleet 也支持相同属性的搭配.</p>
+        <p>复杂的结构也是通过属性组合而成的. 例如, 让数据库1主多备，运行在不同的节点上，是一个较好的想法.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <h4>Features</h4>
+        <h4>特点</h4>
         <ul>
-          <li>Deploy docker containers on arbitrary hosts in a cluster</li>
-          <li>Distribute services across a cluster using machine-level anti-affinity</li>
-          <li>Maintain N instances of a service, re-scheduling on machine failure</li>
-          <li>Discover machines running in the cluster</li>
-          <li>Automatically SSH into the machine running a job</li>
+          <li>可以在集群中的任何节点上，部署docker容器</li>
+          <li>机器级别的分布式服务</li>
+          <li>当机器故障时，在 cluster 重新寻找合适的机器来运行 service </li>
+          <li>cluster监控每个节点的运行状态</li>
+          <li>自动 SSH 到机器上，并运行 job</li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="more-info">
-          <h4>More Information</h4>
-          <a href="/docs/launching-containers/launching/launching-containers-fleet/" class="btn btn-primary" data-category="fleet More Information" data-event="Docs: Launching Containers fleet">Step-by-Step Tutorial</a>
+          <h4>扩展阅读</h4>
+          <a href="/docs/launching-containers/launching/launching-containers-fleet/" class="btn btn-primary" data-category="fleet More Information" data-event="Docs: Launching Containers fleet" target="_blank" >Fleet 教程</a>
           <ul>
-            <li><a href="https://github.com/coreos/fleet/tree/master/Documentation" data-category="etcd More Information" data-event="Github: fleet Documentation">Full Documentation</a></li>
-            <li><a href="/docs/launching-containers/launching/fleet-example-deployment" data-category="fleet More Information" data-event="Docs: Example fleet Deployment">Example Deployment</a></li>
-            <li><a href="https://github.com/coreos/fleet" data-category="fleet More Information" data-event="Github: fleet">GitHub Repository</a></li>
+            <li><a href="https://github.com/coreos/fleet/tree/master/Documentation" data-category="etcd More Information" data-event="Github: fleet Documentation" target="_blank" >Full Documentation</a></li>
+            <li><a href="/docs/launching-containers/launching/fleet-example-deployment" data-category="fleet More Information" data-event="Docs: Example fleet Deployment" target="_blank" >部署范例</a></li>
+            <li><a href="https://github.com/coreos/fleet" data-category="fleet More Information" data-event="Github: fleet">Fleet GitHub</a></li>
           </ul>
         </div>
       </div>
@@ -375,12 +375,12 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h2>Using the Client</h2>
-        <h3>Starting a Single Unit</h3>
+        <h2>使用客户端</h2>
+        <h3>从单独的单元（Unit）开始</h3>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <p>Starting a unit on the cluster can be done by using <code>fleetctl</code> on a CoreOS machine. fleet can also be controlled <a href="/docs/launching-containers/launching/fleet-using-the-client/#from-an-external-host">remotely by configuring a tunnel</a> to a machine in the cluster.</p>
-        <p>Running units can be inspected with <code>fleetctl status &lt;unit&gt;</code>. The output contains the current state of the unit and a the last few lines from the journal/log.</p>
+        <p>在 CoreOS ，你可以用 <code>fleetctl</code> 在 cluster 启动一个单元（Unit）. fleet 可以用 <a href="/docs/launching-containers/launching/fleet-using-the-client/#from-an-external-host" target="_blank" >远程通道</a>控制集群中的任何一个机器.</p>
+        <p>运行中的单元，可以用 <code>fleetctl status &lt;unit&gt;</code> 来查看状态. 输出包括 所有单元（Units）的状态，以及一小部分最后的日志（注：systemd journal 的log）.</p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a href="/static/images/media/fleet-start-unit.gif">
@@ -390,7 +390,7 @@
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h3>Starting a High Availability Service</h3>
+        <h3>着手一个HA的 Service</h3>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a href="/static/images/media/fleet-start-conflicts.gif">
@@ -398,18 +398,18 @@
         </a>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <p>The <code>X-Fleet</code> section of a unit file (<a href="/docs/launching-containers/launching/launching-containers-fleet/">docs</a>) can define relationships between this unit and others running on the cluster. For example, let's spread out our MySQL containers so they're never on the same host with <code>X-Conflicts=mysql*.service</code></p>
-        <p>When <code>mysql.1.service</code>, <code>mysql.2.service</code> and <code>mysql.3.service</code> are started, they will all land on different machines in the cluster.</p>
-        <p>If we SSH onto one of the machines and reboot it, the unit will move to another machine in the cluster.</p>
+        <p>在单元文件（unit file <a href="/docs/launching-containers/launching/launching-containers-fleet/" target="_blank">查看文档</a>）的 <code>X-Fleet</code> 的区域可以定义此 unit 跟cluster中其他 unit 之间的关系. 例如，用 <code>X-Conflicts=mysql*.service</code> 可以让 MySQL containers 一个主机只运行一个此 service</p>
+        <p>当 <code>mysql.1.service</code>, <code>mysql.2.service</code> 和 <code>mysql.3.service</code> 运行时，它们将在集群的不同主机上运行.</p>
+        <p>当我们SSH到一台机器上，并重启它，那么这个 unit 将会迁移到集群的其它机器上运行.</p>
       </div>
     </div>
     <div class="row">
       <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <h3>Testing Machine Failure</h3>
+        <h3>测试宕机</h3>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <p>If a machine fails, units will be rescheduled onto other qualified machines in the cluster. The easiest way to test this process is to reboot a machine.</p>
-        <p>Since our MySQL units conflict with each other, the rescheduled unit shouldn't land on a machine already running MySQL.</p>
+        <p>如果机器宕机，则 units 将会在 cluster 的其它满足条件的机器上被调度.最简单的方式来验证，就是把这台机器重启了.</p>
+        <p>由于 MySQL units 与其它 service 互斥, 所以不会在同一台机器上，运行2个 MySQL service.</p>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a href="/static/images/media/fleet-kill-machine.gif">
@@ -421,16 +421,20 @@
 </div>
 <div class="super-container">
   <div class="container about">
-    <h2>Technical Overview</h2>
+    <h2>技术实现</h2>
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-        <p>You can think of fleet as an extension of systemd that operates at the cluster level instead of the machine level. Systemd is a single machine init system; fleet is a cluster init system.</p>
-        <p>Fleet works by ingesting systemd unit files with a few extra attributes that control how your jobs are dispersed in the cluster. Most of the time your unit files will launch docker containers, but fleet supports all valid unit types such as <code>.socket</code> and <code>.mount</code>. If you’re unfamiliar with unit files, check out our getting <a href="/docs/launching-containers/launching/getting-started-with-systemd">Started with systemd</a> guide.</p>
-        <a href="/docs/launching-containers/launching/fleet-unit-files" class="btn btn-default" data-category="fleet Tech Overview" data-event="fleet Unit Files">fleet Unit Specifications</a><br/><br/>
+        <p>你可以这样类比，systemd是机器级别的管理工具，而fleet是集群级别的。</p>
+        <p>Fleet 通过获取 systemd unit files 的一些额外属性来控制job的，大多数情况下，你的 unit files 只是运行 docker containers ，但是 fleet 支持所有合法的 unit 类型，例如<code>.socket</code> and <code>.mount</code>.如果你不熟悉 unit files，可以参考此文档，<a href="/docs/launching-containers/launching/getting-started-with-systemd" target="_blank" >Started with systemd</a> </p>
+        <a href="/docs/launching-containers/launching/fleet-unit-files" class="btn btn-secondary" data-category="fleet Tech Overview" data-event="fleet Unit Files" target="_blank" >特殊的 fleet Units</a><br/><br/>
+        <p><font color="#a95bae">(这里翻译有些难，怕理解有误，另附上原文，右图很有用！)</font></p>
         <p>fleet contains two major entities: an <strong>engine</strong> and an <strong>agent</strong>. The engine is responsible for job scheduling & bidding and reacts to changes in cluster size. Scheduling logic is equally distributed between many fleet engines within the cluster.</p>
+        <p><font color="#22836f">fleet 主要有2个实体<strong>engine</strong> 和 <strong>agent</strong>，engine 用来作业调度及作业命令处理，并通知到集群。在cluster中，被调度的机会是均匀分布的。</font></p>
         <p>The agent runs on each CoreOS machine and bids for jobs on behalf of the machine. Once a unit is assigned to the cluster, the agent starts the unit file and continually relays the state reported by systemd into fleet.</p>
+        <p><font color="#22836f">agent 运行在每个 CoreOS 机器上，旨在处理作业命令。当一个 unit 在集群中被分配后，agent 启动对应的 unit file，并持续传播状态给 systemd 直到 fleet</font></p>
         <p>The etcd cluster is used for coordination between engines and agents. As a result of the fault-tolerance built into each piece of the system, fleet can automatically re-schedule jobs from failed machines onto other healthy, qualified machines in the cluster.</p>
-        <a href="https://github.com/coreos/fleet/blob/master/Documentation/architecture.md" class="btn btn-default" data-category="fleet Tech Overview" data-event="fleet Architecture">fleet Architecture</a><br/><br/>
+        <p><font color="#22836f">etcd 是为了协调 engines 和 agents，容忍作业启动失败，fleet可以将作业(job)从已失败的机器，迁移到其他符合条件的正常机器，并再调度它。</font></p>
+        <a href="https://github.com/coreos/fleet/blob/master/Documentation/architecture.md" class="btn btn-secondary" data-category="fleet Tech Overview" data-event="fleet Architecture" target="_blank" >fleet 设计</a><br/><br/>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <a href="/static/images/media/fleet-schedule-diagram.png"><img class="img-full" src="/static/images/media/fleet-schedule-diagram.png"></a>
